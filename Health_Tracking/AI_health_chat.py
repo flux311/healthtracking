@@ -1,4 +1,10 @@
 import threading
+import os
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 from openai import OpenAI
 from customtkinter import*
 import thread
@@ -12,7 +18,7 @@ import sounddevice as sd
 def AI_chat_bot_opening(is_aftarisation, aftarisation_login):
     device = torch.device("cpu")
     text_to_voice_model, example_text = torch.hub.load(repo_or_dir="snakers4/silero-models", model="silero_tts",language="ru", speaker="v3_1_ru")
-    client = OpenAI(base_url = "https://api.llm7.io/v1", api_key = "Mff3DwsfBGsZkvPEb/cZ1tpn4yozA/D9WEIOn3hXcIZ7H9DY9PZjdUuDGqUD9PxLVZ6K+4kwv68GpIC05/csnP++XETi3iDMZFnIhOHnrFhJhLOkpIk+09Lw3megget9PX82oyUMg6yE77+MOlY=")
+    client = OpenAI(base_url = "https://api.llm7.io/v1", api_key=os.environ.get("LLM7_API_KEY"))
     chat_history = [{"role":"system", "content":"Ты — медицинский помощник. Не ставишь диагнозы, но даёшь рекомендации исходя из запроса"}]
 
     recognition = sr.Recognizer()
