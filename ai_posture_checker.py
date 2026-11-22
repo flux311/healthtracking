@@ -28,7 +28,7 @@ def _load_model():
     global _model, _model_ready, _model_error
     try:
         from ultralytics import YOLO
-        model_path = os.path.join("models", "yolov8n-pose.pt")
+        model_path = os.path.join("Health_Tracking", "models", "yolov8n-pose.pt")
         if os.path.exists(model_path):
             m = YOLO(model_path)
         else:
