@@ -14,7 +14,6 @@
 
 ```bash
 pip install -r requirements.txt
-cd Health_Tracking
 copy .env.example .env
 # вставь свой ключ в .env: LLM7_API_KEY=...
 python main.py
