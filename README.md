@@ -24,13 +24,26 @@ python main.py
 ## Структура
 
 ```
+main.py
+ai_health_chat.py
+ai_psychology_bot.py
+ai_posture_checker.py
+database.py
+assets/
+  profile_avatar.png
+  register_image.png
+  health_assistant.png
+  psychology_bot.png
+  posture.png
+  program_info_1.png
+  program_info_2.png
+  program_info_3.png
+  speak_button.png
+  psychology_rectangle.png
+  frame_camera_off.png
+  medcard_template.docx
 Health_Tracking/
-  main.py
-  ai_health_chat.py
-  ai_psychology_bot.py
-  ai_posture_checker.py
-  database.py
   models/
     yolov8n-pose.pt
-  .env.example
+.env.example
 ```
