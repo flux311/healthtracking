@@ -1,11 +1,11 @@
 from tkinter import PhotoImage
 from anyio import move_on_after
 from customtkinter import*
-import AI_psychology_bot
+import ai_psychology_bot
 import database
 from CTkMessagebox import CTkMessagebox
-import AI_health_chat
-import AI_posture_checker
+import ai_health_chat
+import ai_posture_checker
 import json
 from docxtpl import DocxTemplate
 from tkinter import filedialog
@@ -106,13 +106,13 @@ def main_menu_create():
     upload_history_button.place(relx = .225, rely = .045, anchor = CENTER)
 
     def AI_chat_bot_open():
-        AI_health_chat.AI_chat_bot_opening(is_aftarisation, aftarisation_login)
+        ai_health_chat.AI_chat_bot_opening(is_aftarisation, aftarisation_login)
 
     def AI_psihology_bot_open():
-        AI_psychology_bot.AI_psychology_bot_opening(is_aftarisation, aftarisation_login)
+        ai_psychology_bot.AI_psychology_bot_opening(is_aftarisation, aftarisation_login)
 
     def health_osanka_module_open():
-        AI_posture_checker.AI_posture_checker_opening(is_aftarisation, aftarisation_login)
+        ai_posture_checker.AI_posture_checker_opening(is_aftarisation, aftarisation_login)
 
 
     AI_chat_button = main_canvas.create_image(620, 150, image = AI_chat_bot_button_image)
