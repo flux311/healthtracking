@@ -2,7 +2,7 @@ import sqlite3
 import json
 import datetime
 
-HT_data_base = sqlite3.connect("HT_Data_Base.db")
+HT_data_base = sqlite3.connect("health_tracking.db")
 HT_cursor = HT_data_base.cursor()
 
 HT_cursor.execute("CREATE TABLE IF NOT EXISTS DataBase(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, surname TEXT NOT NULL, login TEXT NOT NULL, password TEXT NOT NULL, module TEXT NOT NULL, info TEXT NOT NULL, dates TEXT NOT NULL, medcard_module TEXT NOT NULL, medcard_info TEXT NOT NULL, medcard_dates TEXT NOT NULL)")
