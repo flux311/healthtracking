@@ -1,7 +1,13 @@
 from openai import OpenAI
+import os
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 client = OpenAI(
-    api_key="Mff3DwsfBGsZkvPEb/cZ1tpn4yozA/D9WEIOn3hXcIZ7H9DY9PZjdUuDGqUD9PxLVZ6K+4kwv68GpIC05/csnP++XETi3iDMZFnIhOHnrFhJhLOkpIk+09Lw3megget9PX82oyUMg6yE77+MOlY=",  # Или ваш токен с token.llm7.io
+    api_key=os.environ.get("LLM7_API_KEY"),  # Или ваш токен с token.llm7.io
     base_url="https://api.llm7.io/v1"
 )
 
