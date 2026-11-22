@@ -33,6 +33,5 @@ Health_Tracking/
   database.py
   models/
     yolov8n-pose.pt
-  face_landmarker.task
   .env.example
 ```
