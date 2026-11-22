@@ -1,4 +1,10 @@
 import threading
+import os
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 from tkinter import PhotoImage
 import openai
 from openai import OpenAI
@@ -28,7 +34,7 @@ def AI_psychology_bot_opening(is_aftarisation, aftarisation_login):
 
     emotions_detect = FER()
 
-    client = OpenAI(base_url = "https://api.llm7.io/v1", api_key = "fLmR9BcVcjJqcAp3RxJ1hmtCaISWLPdjEaTdoYkbLkXkm3IHiGrmx9qAI1z5CA4+cW/8xWFR8rn+m7HJC2Ef3fhORSsk/YGYRdhazBh67wlkQtr+MgHwMY2ZeWvY6YHyesV+xFWORYRXXpp4g1c=")
+    client = OpenAI(base_url = "https://api.llm7.io/v1", api_key=os.environ.get("LLM7_API_KEY"))
     chat_history = [{"role":"system", "content":"Ты - психолог. Твоя задача общаться с собеседником, поддерживать разговор, помогать ему морально и копировать манеру общения. В конце каждого запроса будет информация о эмоциональном состоянии собеседника, полученом из анализа камеры пользователя(Эмоциональное состояние: **название эмоционального состояния**).В случае отсутствия информации о состоянии человека(например он выключил камеру) на месте эмоции будет надпись **нет информации**. Вот перечень всех эмоций: neutral - спокойный, sad - грустный, angry - злой, disgust - испытывающий отвращение, fear - напуганный, happy - весёлый, surprise - удивлённый"}]
 
     recognition = sr.Recognizer()
